@@ -1,2 +1,4 @@
 # miamakesapp
-A recipe app for the entire family
+A recipe app for the entire family.
+
+Using the Beryl stack
