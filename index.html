@@ -8,16 +8,27 @@
 </head>
 <body>
     <main>
-        <header class="bg-sunset">
-            <nav class=="w:max:full">
+        <header class="w:max:full" id="search-top-bar">
+            <mat-icon name="search" color="icon:sunset" class="::mds"></mat-icon>
+            <label for="search" class="lato">Search: 
+            <input class="h-2 mb:4 rounded:sm" type="search" />
+            </label>
+        </header>
+        <header class="bg-sunset h-5" id="navigation">
+            <nav class="w:max:full fw-nowrap">
                 <ul class="flex row even gap-3 list:none text:white">
                     <li>Home</li>
                     <li>Recipes</li>
+                    <li>DIY Projects</li>
+                    <li>Gardening</li>
+                    <li>Blog</li>
+                    <li>Gift Shop</li>
+                    <li>Contact</li>
                 </ul>
             </nav>
         </header>
-        <div class="flex col items:center w:min:full">
-            <section class="w:50%">
+        <div class="flex col m:auto items:center w:max:75 bg-gray-300">
+            <section class="">
                 <h2 class="playfair:display text:xxlg">Mia Makes</h2>
                 <span class="homemade-apple text:lg">A recipe app for the entire family</span><br />
             <div class="my:5">
@@ -34,8 +45,8 @@
 
 </main>
     <!-- Javascript Files -->
-<script async src="https://cdn.jsdelivr.net/gh/theberylcompany/berillium-ui@main/ui/vanilla/js/global.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/theberylcompany/berillium-ui@main/ui/vanilla/js/global.js"></script>
 <!-- Scripts utilizing Global.js code need to go under this line -->
-<script async src="https://cdn.jsdelivr.net/gh/theberylcompany/berillium-ui@main/ui/vanilla/js/elements/icon/icon-custom.js"></script>    
+<script src="https://cdn.jsdelivr.net/gh/theberylcompany/berillium-ui@main/ui/vanilla/js/elements/icon/icon-custom.js"></script>    
 </body>
 </html>
