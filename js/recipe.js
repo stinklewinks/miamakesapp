@@ -18,3 +18,5 @@ class Recipe {
         return this.description;
     }
 }
+
+define('recipe.js', 'recipe' ,Recipe);
