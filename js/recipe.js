@@ -1,22 +1,24 @@
-class Recipe {
-    static name = 'Recipe name';
-    static description = 'Recipe Description';
+window.classes = window.classes || {};
+window.classes.recipe = window.classes.recipe || {};
+// window.classes.recipe = { Recipe };         
 
-    constructor(){
-        return `${this.name} is created: ${this.description}`;
-    }
+window.classes.recipe.Recipe = class Recipe {
+        static name = 'Recipe name';
+        static description = 'Recipe Description';
 
-    changeRecipeName(newName){
-        this.name = newName;
-    }
+        constructor(){
+            return `${this.name} is created: ${this.description}`;
+        }
 
-    viewRecipeName(){
-        return this.name;
-    }
+        changeRecipeName(newName){
+            this.name = newName;
+        }
 
-    viewDescription(){
-        return this.description;
-    }
-}
+        viewRecipeName(){
+            return this.name;
+        }
 
-define('recipe.js', 'recipe' ,Recipe);
+        viewDescription(){
+            return this.description;
+        }
+    };
