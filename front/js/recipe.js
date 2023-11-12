@@ -1,20 +1,33 @@
 class Recipe {
-        static name = 'Recipe name';
-        static description = 'Recipe Description';
-
         constructor(){
-            return `${this.name} is created: ${this.description}`;
+            this.content = {
+                id: '',
+                 name: 'Recipe',
+                 author: '',
+                 description: {
+                    overall : '',
+                    nutrition: '',
+                },
+                times: {
+                    prep: '',
+                    cook: ''
+                },
+                ingredients: [],
+                steps: []
+                    } 
+
+            console.log(`${this.content.name} is created: ${this.content.description.overall}`);
         }
 
         changeRecipeName(newName){
-            this.name = newName;
+            this.content.name = newName;
         }
 
         viewRecipeName(){
-            return this.name;
+            return this.content.name;
         }
 
         viewDescription(){
-            return this.description;
+            return this.content.description;
         }
     };

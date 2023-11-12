@@ -1,29 +1,24 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 const uri = process.env.MONGODB_URI;
-class Recipe {
-    static name = 'Recipe name';
-    static description = 'Recipe Description';
 
-    constructor(){
-        return `${this.name} is created: ${this.description}`;
-    }
-
-    changeRecipeName(newName){
-        this.name = newName;
-    }
-
-    viewRecipeName(){
-        return this.name;
-    }
-
-    viewDescription(){
-        return this.description;
-    }
-};
-
-async function createRecipe(db_name, collection_name){
+async function createRecipe(recipe = {}){
     // Create a recipe and add it to a collection
+    await client.connect();
+    const db = client.db(process.env.DB_NAME);
+    const collection = db.collection(process.env.MONGO_COLLECTION);
+    const recipe_doc = {
+        name: recipe.name,
+        author: recipe.author,
+        description: {description: recipe.desc.overall, nutrition: recipe.desc.nutrition},
+        times: {prep: recipe.times.prep, cook: recipe.times.cook},
+        ingredients: recipe.ingredients,
+        steps: recipe.steps
+    }
+
+    const result = await collection.insertOne({
+        recipe_doc
+    })
 }
 
 async function createCookbook(db_name, collection_name){
@@ -35,11 +30,15 @@ async function readRecipe(){
     const client = new MongoClient(uri);
     try { 
         await client.connect();
-        const db = client.db('Volume001');
-        const collection = db.collection('Recipes');
+        const db_name = process.env.DB_NAME;
+        const coll_name = process.env.DB_COLLECTION;
+        const db = client.db(db_name);
+        const collection = db.collection(coll_name);
 
         const recipe = await collection.find({}).toArray();
+        console.log('Database query');
         if(recipe){
+            
             return recipe;
         }
         else {
@@ -64,5 +63,6 @@ async function editRecipe(db_name, collection_name, recipe_name){
 }
 
 module.exports = {
-    readRecipe
+    readRecipe,
+    createRecipe
 }

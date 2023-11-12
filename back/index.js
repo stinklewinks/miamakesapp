@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const {db_start, db_stop} = require('./db.js');
 const {readRecipe} = require('./recipe/recipe.js');
 
@@ -7,6 +8,7 @@ const app = express();
 const PORT = 3001;
 
 // MUST FOR VANILLA JS LIB
+app.use(bodyParser.json());
 app.use(cors());
 
 
@@ -25,6 +27,23 @@ app.get('/', async (req, res) => {
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
+
+app.post('/recipe', async (req, res) => {
+    const recipeData = req.body;
+
+    if(!recipeData){
+        return res.status(400).json({error: 'Must contain recipe'})
+    }
+
+    try {
+        await createRecipe(recipeData);
+        console.log('Successful recipe entry');
+    }
+    catch (error) {
+        console.error('Error adding recipe:', error);
+        res.status(500).json({error: 'Internal Server Error'});
+    }
+})
 
 
 // Server
