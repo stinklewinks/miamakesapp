@@ -1,0 +1,21 @@
+{
+  "name": "berilliumjs-cms",
+  "version": "0.0.1",
+  "description": "The JavaScript version of the Berillium engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Beryl Labs",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sourcemaps": "^3.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
