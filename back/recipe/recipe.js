@@ -1,5 +1,6 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = 'mongodb+srv://berylsmarthome:qtkPiK6Dxeidckg4@recipecluster0.sc6lcse.mongodb.net/?retryWrites=true&w=majority';
+require('dotenv').config();
+const uri = process.env.MONGODB_URI;
 class Recipe {
     static name = 'Recipe name';
     static description = 'Recipe Description';
