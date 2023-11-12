@@ -6,7 +6,11 @@ const {readRecipe} = require('./recipe/recipe.js');
 const app = express();
 const PORT = 3001;
 
+// MUST FOR VANILLA JS LIB
 app.use(cors());
+
+
+// ROUTES
 app.get('/', async (req, res) => {
     try {
         const allRecipes = await readRecipe('your-database-name', 'your-collection-name');
@@ -22,6 +26,8 @@ app.get('/', async (req, res) => {
     }
 });
 
+
+// Server
 async function start(){
     try{
         db_start();
