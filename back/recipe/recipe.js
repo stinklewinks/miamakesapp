@@ -1,3 +1,5 @@
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = 'mongodb+srv://berylsmarthome:qtkPiK6Dxeidckg4@recipecluster0.sc6lcse.mongodb.net/?retryWrites=true&w=majority';
 class Recipe {
     static name = 'Recipe name';
     static description = 'Recipe Description';
@@ -27,8 +29,29 @@ async function createCookbook(db_name, collection_name){
     // Create a cookbook (collection) that stores recipes
 }
 
-async function readRecipe(db_name, collection_name){
+async function readRecipe(){
     // Read a recipe from a cookbook (collection) and return the value
+    const client = new MongoClient(uri);
+    try { 
+        await client.connect();
+        const db = client.db('Volume001');
+        const collection = db.collection('Recipes');
+
+        const recipe = await collection.find({}).toArray();
+        if(recipe){
+            return recipe;
+        }
+        else {
+            console.log('Recipe not found');
+            return null;
+        }
+    }
+    catch(error) { 
+        console.error("Error reading recipe: ", error);
+    }
+    finally {
+        await client.close();
+    }
 }
 
 async function deleteRecipe(db_name, collection_name, recipe_name){
@@ -37,4 +60,8 @@ async function deleteRecipe(db_name, collection_name, recipe_name){
 
 async function editRecipe(db_name, collection_name, recipe_name){
     // Edit a recipe
+}
+
+module.exports = {
+    readRecipe
 }

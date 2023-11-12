@@ -1,13 +1,25 @@
 const express = require('express');
 const cors = require('cors');
 const {db_start, db_stop} = require('./db.js');
+const {readRecipe} = require('./recipe/recipe.js');
 
 const app = express();
 const PORT = 3001;
 
 app.use(cors());
-app.get('/', (req, res)=> {
-    res.send({"Hello": "world!"});
+app.get('/', async (req, res) => {
+    try {
+        const allRecipes = await readRecipe('your-database-name', 'your-collection-name');
+
+        if (allRecipes.length > 0) {
+            res.json(allRecipes); // Send the recipes as JSON
+        } else {
+            res.status(404).json({ message: 'No recipes found.' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
 });
 
 async function start(){
