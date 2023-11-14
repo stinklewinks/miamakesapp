@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theberylcompany/BerilliumCSS@main/css/berillium.css">
 </head>
 <body>
-    <main>
+    <main id="">
         <header class="w:max:full" id="search-top-bar">
             <mat-icon name="search" color="icon:sunset" class="::mds"></mat-icon>
             <label for="search" class="lato">Search: 
@@ -28,31 +28,29 @@
             </nav>
         </header>
         <div class="flex col m:auto items:center w:max:75 bg-gray-300">
-            <section class="">
+            <section class="" id="hero-red">
                 <h2 class="playfair:display text:xxlg">Mia Makes</h2>
                 <span class="poppins text:lg">A recipe app for the entire family</span><br />
-            <div class="my:5">
-                <fas-icon lib="br" name="facebook" color="icon:sunset" class="::md"></fas-icon>
-                <fas-icon lib="br" name="x-twitter" color="icon:sunset" class="::md"></fas-icon>
-                <fas-icon lib="br" name="instagram" color="icon:sunset" class="::md"></fas-icon>
-                <fas-icon lib="br" name="pinterest" color="icon:sunset" class="::md"></fas-icon>
-                <span class="lato">Sharing is caring!</span>
-            </div>
             </section>
             <section id="recipe">
                 
             </section>
     </div> 
     
-    
+    <div id="app">
+        Test Data
+    </div>
 
 </main>
     <!-- Javascript Files -->
-<script src="https://cdn.jsdelivr.net/gh/theberylcompany/berillium-ui@main/ui/vanilla/js/global.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/theberylcompany/berilliumjs@main/berillium.js"></script>
 <!-- Scripts utilizing Global.js code need to go under this line -->
 <script src="https://cdn.jsdelivr.net/gh/theberylcompany/berillium-ui@main/ui/vanilla/js/elements/icon/icon-custom.js"></script>
 <script src="js/recipe.js"></script>
 <script src="components/recipe/recipe-card.js"></script>
-<script src="js/script.js"></script>    
+<script src="js/script.js"></script>
+<script src="components/social/sharing-bar.js" defer></script>
+<script src="router/router.js"></script>
+<script src="views/views.js"></script>
 </body>
 </html>

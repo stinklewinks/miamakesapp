@@ -1,4 +1,5 @@
 const app = async ()=>{
+   
     // Add the recipe class
     if(!window.variables.recipe){
         window.variables.recipe = {}
