@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "mongodb": "^6.2.0"
-  }
+  },
+  "name": "miamakesweb",
+  "version": "1.0.0",
+  "description": "The web app for Mia Makes",
+  "main": "index.js",
+  "repository": "https://github.com/theberylcompany/miamakesapp.git",
+  "author": "Drew Marshall <drewwinkles@gmail.com>",
+  "license": "MIT"
 }

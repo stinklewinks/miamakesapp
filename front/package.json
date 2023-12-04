@@ -1,0 +1,8 @@
+{
+  "name": "miamakeswebapp",
+  "version": "1.0.0",
+  "description": "The web app for Mia Makes",
+  "main": "index.js",
+  "author": "Drew Winkles",
+  "license": "MIT"
+}
