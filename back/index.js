@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const {db_start, db_stop} = require('./db.js');
 const {readRecipe} = require('./recipe/recipe.js');
+const User = require('./user/user.js');
 
 const app = express();
 const PORT = 3001;
@@ -11,6 +12,8 @@ const PORT = 3001;
 app.use(bodyParser.json());
 app.use(cors());
 
+const Drew = new User('Drew', 'drewwinkles@gmail.com', 'Stinklewinks');
+console.log(Drew.setPassword('@St1nkl3n3t0933!'));
 
 // ROUTES
 app.get('/', async (req, res) => {

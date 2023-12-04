@@ -64,5 +64,7 @@ async function editRecipe(db_name, collection_name, recipe_name){
 
 module.exports = {
     readRecipe,
-    createRecipe
+    createRecipe,
+    deleteRecipe,
+    editRecipe
 }
