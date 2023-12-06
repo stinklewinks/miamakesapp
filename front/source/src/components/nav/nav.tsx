@@ -11,4 +11,4 @@ function NavDark() {
   )
 }
 
-export default NavDark
+export default NavDark;
