@@ -1,7 +1,7 @@
 class User {
-    private name: String
-    private email: String
-    private username: String
+    private name!: String
+    private email!: String
+    private username!: String
     private password!: String
 
     __constructor(name: String, email: String, username: String){

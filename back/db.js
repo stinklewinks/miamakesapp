@@ -1,4 +1,5 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
+require('dotenv').config();
 
 const uri = 'mongodb+srv://' + `${process.env.DB_USERNAME}` + ':' + `${process.env.DB_USER_PASS}` + '@' + `${process.env.DB_CLUSTER}` + '/?retryWrites=true&w=majority';
 const client = new MongoClient(uri, {
@@ -30,7 +31,7 @@ async function db_stop() {
         console.error('Error closing the db:'. error);
     }    
 }
-
+console.log(uri);
 module.exports = {
     db_start,
     db_stop

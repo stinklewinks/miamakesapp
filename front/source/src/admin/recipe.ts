@@ -1,17 +1,17 @@
 class Recipe {
-    private name: String
-    private author: String
-    private description!: String
+    private name!: string
+    private author!: string
+    private description!: string
     private time = {
-        prep: Number,
-        cook: Number
+        prep: 0,
+        cook: 0,
     }
     private ingredients = [String]
     private steps = [String]
     private nutrition = {}
 
 
-    __constructor(name: String, author: String){
+    __constructor(name: string, author: string){
         this.name = name;
         this.author = author;
     }
@@ -20,7 +20,7 @@ class Recipe {
         return this.name;
     }
 
-    updateName(name: String){
+    updateName(name: string){
         this.name = name;
     }
 
@@ -28,7 +28,7 @@ class Recipe {
         return this.author;
     }
 
-    updateAuthor(name: String){
+    updateAuthor(name: string){
         this.author = name;
     }
 
@@ -36,7 +36,7 @@ class Recipe {
         return this.description;
     }
 
-    changeDesc(content: String){
+    changeDesc(content: string){
         this.description = content;
     }
 
@@ -44,7 +44,7 @@ class Recipe {
         return this.time.prep;
     }
 
-    setPrepTime(prep){
+    setPrepTime(prep: number){
         this.time.prep = prep;
     }
 
@@ -52,21 +52,21 @@ class Recipe {
         return this.time.cook;
     }
     
-    setCookTime(time){
+    setCookTime(time: number){
         this.time.cook = time;
     }
 
-    addIngred(ingred){
+    addIngred(ingred: string){
 
-        this.ingredients.push(ingred);
+       // this.ingredients.push(ingred);
     }
 
     getIngreds(){
         return this.ingredients;
     }
 
-    addStep(step){
-        this.steps.push(step);
+    addStep(step: String){
+        // this.steps.push(step);
     }
 
     getSteps(){
