@@ -1,16 +1,6 @@
-import React from 'react'
-
-function addStep(){
-
-}
-
-function addIngred(){
-    const input = document.createElement('input');
-    const fieldset = document.getElementById('add-steps');
-    fieldset?.appendChild(input);
-    input.setAttribute('type', 'text');
-    
-}
+import React, {useState} from 'react'
+import IngredientForm from './ingreds'
+import StepForm from './steps'
 
 
 function RecipeAdd() {
@@ -55,29 +45,13 @@ function RecipeAdd() {
             <div className="flex col w:30 bg:gray-200">
             <h2>Section Two</h2>
             <label><span className="playfair:display text:xlg">Ingredients</span>
-            <fieldset id="add-steps">
-                <input type="text" name="ingred one amount" id="ingred one amount" className="w:3" />
-                    <select>
-                            <option value="oz">Oz</option>
-                            <option value="tsp">tsp</option>
-                            <option value="tbsp">Tbsp</option>
-                            <option value="--">--</option>
-                    </select> <span>of </span>
-                <input type="text" name="ingred one" id="ingred one" />
-                <button className="w:15 h:5" 
-                onClick={(e) => {
-                    e.preventDefault();
-                    addIngred();
-                }}>Add An Ingredient</button>
+            <fieldset id="add-ingreds">
+                <IngredientForm />
             </fieldset></label>
 
 
             <label><span className="playfair:display text:xlg">Steps</span><fieldset>
-                    <input type="text" name="step one" id="step one" /><br />
-                    <input type="text" name="step two" id="step two" />
-                    <div>
-                        <button className="w:15 h:5" onClick={(e) => {e.preventDefault()}}>Add A Step</button>
-                    </div>
+                    <StepForm />
                 </fieldset></label>
             </div>
             </div>
@@ -88,4 +62,4 @@ function RecipeAdd() {
   )
 }
 
-export default RecipeAdd
+export {RecipeAdd}
