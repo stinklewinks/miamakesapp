@@ -1,9 +1,8 @@
 import {StrictMode} from 'react';
 import ReactDOM from 'react-dom/client';
-import HomeBody from './components/home';
-import Hero from './components/hero/hero';
-import {RecipeAdd} from './components/forms/recipe/recipe';
+import Hero from './components/hero/hero';om './components/forms/recipe/recipe';
 import NavDark from './components/nav/nav';
+import SignupForm from './components/forms/signup/signup';
 
 
 const root = ReactDOM.createRoot(
@@ -13,7 +12,6 @@ root.render(
   <StrictMode>
       <NavDark />
       <Hero />
-      <HomeBody />
-      <RecipeAdd />
+      <SignupForm />
   </StrictMode>
 );

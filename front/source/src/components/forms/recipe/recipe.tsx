@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
-import IngredientForm from './ingreds'
-import StepForm from './steps'
+import { BasicInfo } from './mods/basic'
+import IngredientForm from './mods/ingreds'
+import StepForm from './mods/steps'
+import { TimesForm } from './mods/times'
 
 
 function RecipeAdd() {
@@ -10,52 +11,27 @@ function RecipeAdd() {
         <form>
             {/* Container (row) */}
             <div className="flex around items:center">
-
-
             {/* Left  (col)*/}
             <div className="flex col w:30 bg:gray-200">
-                <h2 className="playfair:display text:xlg">Basic Info</h2>
-                <fieldset>
-                    <label htmlFor="recipe-name"><span className="poppins text:md">Name of Recipe: </span><input type="text" id="recipe name"/></label><br />
-                    <label><span className="poppins text:md">Description</span><textarea></textarea></label><br />
-                </fieldset>
-            <label><span className="playfair:display text:xlg">Times</span>
-            <p className="poppins text:md"> Please input the times it takes to prepare the ingredients and cooking the dish.</p>
-            <fieldset>
-                    <span className="poppins text:md">Prep Time: </span><input className="w:3" type="text" name="prep time" id="prep time" />
-                    <select>
-                            <option value="sec">sec</option>
-                            <option value="min">min</option>
-                            <option value="hr">hr</option>
-                            <option value="--">--</option>
-                    </select><br />
-                    <span className="poppins text:md">Cook Time: </span><input className="w:3" type="text" name="cook time" id="cook time" />
-                    <select>
-                            <option value="sec">sec</option>
-                            <option value="min">min</option>
-                            <option value="hr">hr</option>
-                            <option value="--">--</option>
-                    </select>
-                </fieldset></label>
-            </div>
-
-
-
-            {/* Right (col)*/}
-            <div className="flex col w:30 bg:gray-200">
-            <h2>Section Two</h2>
+                <BasicInfo />
+                <TimesForm />
             <label><span className="playfair:display text:xlg">Ingredients</span>
             <fieldset id="add-ingreds">
                 <IngredientForm />
             </fieldset></label>
-
-
-            <label><span className="playfair:display text:xlg">Steps</span><fieldset>
+            <label><span className="playfair:display text:xlg">Directions</span><fieldset>
                     <StepForm />
                 </fieldset></label>
             </div>
-            </div>
             
+            {/* Right (col)*/}
+            <div className="flex col w:30 bg:gray-200">
+                <div>
+                    <h2>Preview</h2>
+                    <p>This is where a preview of the recipe will be.</p>
+                </div>
+            </div>
+            </div>
             
         </form>
     </div>
