@@ -1,6 +1,6 @@
 import {StrictMode} from 'react';
 import ReactDOM from 'react-dom/client';
-import Hero from './components/hero/hero';om './components/forms/recipe/recipe';
+import Hero from './components/hero/hero';
 import NavDark from './components/nav/nav';
 import SignupForm from './components/forms/signup/signup';
 
