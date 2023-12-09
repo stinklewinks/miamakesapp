@@ -1,6 +1,8 @@
+import './signup.css';
+
 function SignupForm() {
   return (
-    <div className="flez col center mt:10 pb:rel:10">
+    <div className="flex col around items:center mt:10 pb:rel:10">
     <form className="" method="" action="">
 
     <h2 className="playfair:display text:xlg text:center">Signup</h2>

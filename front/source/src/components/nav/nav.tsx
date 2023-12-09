@@ -1,8 +1,8 @@
 
 function NavDark() {
   return (
-    <nav className="bg-red-500 nav:bar primary:md">
-        <ul className="poppins text:md nav:box primary:md">
+    <nav className="bg-red-500 flex items:center around w:full h:8">
+        <ul className="flex items:center around poppins text:md w:40">
             <li>Home</li>
             <li>Recipes</li>
         </ul>

@@ -1,10 +1,10 @@
 class User {
-    private name!: String
-    private email!: String
-    private username!: String
-    private password!: String
+    private name!: string
+    private email!: string
+    private username!: string
+    private password!: string
 
-    __constructor(name: String, email: String, username: String){
+    __constructor(name: string, email: string, username: string){
         this.name = name;
         this.email = email;
         this.username = username;
@@ -12,7 +12,7 @@ class User {
 }
 
 class Author extends User {
-        private recipes = [Object]
+        private recipes = <object[]>[];
          
         recipesMade(){
             return this.recipes.length;
@@ -22,7 +22,7 @@ class Author extends User {
             return this.recipes;
         }
 
-        createRecipe(recName: String, desc: String, ingreds = [String]){
+        createRecipe(recName: string, desc: string, ingreds = <string[]>[]){
             const recipe = {
                 name: recName,
                 description: desc,

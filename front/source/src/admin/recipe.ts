@@ -6,8 +6,8 @@ class Recipe {
         prep: 0,
         cook: 0,
     }
-    private ingredients = [String]
-    private steps = [String]
+    private ingredients = <string[]>[]
+    private steps = <string[]>[]
     private nutrition = {}
 
 
@@ -57,16 +57,15 @@ class Recipe {
     }
 
     addIngred(ingred: string){
-
-       // this.ingredients.push(ingred);
+       this.ingredients.push(ingred);
     }
 
     getIngreds(){
         return this.ingredients;
     }
 
-    addStep(step: String){
-        // this.steps.push(step);
+    addStep(step: string){
+        this.steps.push(step);
     }
 
     getSteps(){
